@@ -13,12 +13,16 @@ def main():
 		y = float(s[1])
 		c = float(s[2])
 		if(c == 1):
+			#bolt
 			plt.plot(x,y,'rs')
 		elif(c == 2):
+			#nut
 			plt.plot(x, y, 'bo')
 		elif(c == 3):
+			#ring
 			plt.plot(x, y, 'go')
 		else:
+			#scrap
 			plt.plot(x, y, 'k^')
 		plt.xlabel("Rot.")
 		plt.ylabel("Ecc")
