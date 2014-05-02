@@ -28,8 +28,8 @@ class MLP:
     """construct and MLP with the given number of input, hidden and output nodes"""
 
     self.ninputs = ninput
-    self.hiddens = [ [random.random() for i in range(ninput + 1)] for i in range( nhidden ) ]
-    self.outputs = [ [random.random() for i in range( nhidden + 1) ] for i in range( noutput ) ]
+    self.hiddens = [ [random.random() * 2 - 1 for i in range(ninput + 1)] for i in range( nhidden ) ]
+    self.outputs = [ [random.random() * 2 - 1 for i in range( nhidden + 1) ] for i in range( noutput ) ]
 
   def values(self,  inputs ):
     """return a tuple containing the hidden values and the output values"""
@@ -110,13 +110,22 @@ class MLP:
     best = 0
     besti = 0
 
+    # print outs
+
     for i in range( len( outs ) ):
       if outs[i] > best:
         best = outs[i]
         besti = i
-    return besti
 
+<<<<<<< HEAD
 f = MLP(2,5,4)
+=======
+
+    return besti + 1
+
+
+f = MLP(2,4,4)
+>>>>>>> 700902759ffa7926a3dccde8f8f0e5c380c3a04d
 func = []
 for line in open( "test_data.csv" ):
 
@@ -126,14 +135,23 @@ for line in open( "test_data.csv" ):
 
 
 
+
+
+
 if __name__ == "__main__":
   f.update( func[0][0], func[0][1] )
 
+<<<<<<< HEAD
   for i in range( 100):
+=======
+  accuracies = [-1 for i in range( 21 ) ]
+
+  for i in range( 10001 ):
+  # for i in range( 10001 ):
+>>>>>>> 700902759ffa7926a3dccde8f8f0e5c380c3a04d
     for (inps, out) in func:
       f.update( inps, out)
 
-    print "epoch: " , i
     correct, count = 0, 0
     for (inps, out) in func:
       oclass = f.outputClass( inps )
@@ -142,6 +160,11 @@ if __name__ == "__main__":
         correct += 1
         # print "match"
       count += 1
-    # i = raw_input()
-    print "%d / %d" % (correct, count )
+    # raw_input()
+    accuracies[correct] = i
+    if i == 10 or i == 100 or i == 1000 or i == 10000:
+      print "epoch: " , i
+      print "%d / %d" % (correct, count )
 
+
+  print accuracies
