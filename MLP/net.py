@@ -116,7 +116,7 @@ class MLP:
         besti = i
     return besti
 
-f = MLP(2,2,4)
+f = MLP(2,5,4)
 func = []
 for line in open( "test_data.csv" ):
 
@@ -129,7 +129,7 @@ for line in open( "test_data.csv" ):
 if __name__ == "__main__":
   f.update( func[0][0], func[0][1] )
 
-  for i in range( 10):
+  for i in range( 100):
     for (inps, out) in func:
       f.update( inps, out)
 

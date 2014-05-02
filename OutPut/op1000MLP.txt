@@ -1,0 +1,9 @@
+Number of Errors:  0
+Recognition Rate:  100.0 %
+Profit Obtained: $ 2.03
+Confusion Matrix: 
+	bolt 	nut 	ring 	scrap
+bolt 	5 	0 	0 	0 	
+nut 	0 	6 	0 	0 	
+ring 	0 	0 	5 	0 	
+scrap 	0 	0 	0 	4 	

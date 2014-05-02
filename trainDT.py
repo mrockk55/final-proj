@@ -208,7 +208,28 @@ def train():
 		elif(i==99):
 			pickle.dump(Tree,open('100Tree.p','wb'))
 	pickle.dump(Tree,open('maxTree.p','wb'))
+	plt.xlabel('No. of Trees')
+	plt.ylabel('Sum of Squared Errors')
+	plt.title('SSE Plot')
 	plt.plot(y,x,'b')
+	#plt.show()
+	plt.figure()
+	plt.xlabel("Rotational Symmetry")
+	plt.ylabel("Eccentricity")
+	plt.title("bolt(red) nut(blue) ring(green) scrap(black)")
+	for d in Data:
+		#bolt
+		if(d[2] == 1):
+			plt.plot(d[0],d[1],'rs')
+		#nut
+		elif(d[2] == 2):
+			plt.plot(d[0],d[1],'bo')
+		#ring
+		elif(d[2] == 3):
+			plt.plot(d[0],d[1],'go')
+		#scrap
+		elif(d[2] == 4):
+			plt.plot(d[0],d[1],'k^')
 	plt.show()
 		
 	
