@@ -1,5 +1,4 @@
 import math
-
 import random
 
 def crossProduct( left, right ):
@@ -89,7 +88,7 @@ class MLP:
     # update the midde-to-output weights
     # do the bias input weights
     for o in range( len( self.outputs ) ):
-       self.outputs[o][0] = self.outputs[o][0] - ALPHA * output_update[o] * 1
+       self.outputs[o][0] = self.outputs[o][0] - ALPHA * output_update[o] * sigmoid( 1 )
     # now do the weights with
     for o in range( len( self.outputs ) ):
       for m in range( 0, len( self.hiddens  )  ):
@@ -98,7 +97,7 @@ class MLP:
     # update the input-to-hidden layer
     # do the bias input weights
     for m in range( len(self.hiddens) ):
-        self.hiddens[m][0] = self.hiddens[m][0] - ALPHA * middle_update[m] * 1
+        self.hiddens[m][0] = self.hiddens[m][0] - ALPHA * middle_update[m] * sigmoid( 1 )
 
     for i in range( self.ninputs ):
       for h in range( len( self.hiddens ) ):
@@ -117,15 +116,11 @@ class MLP:
         best = outs[i]
         besti = i
 
-<<<<<<< HEAD
-f = MLP(2,5,4)
-=======
 
     return besti + 1
 
 
 f = MLP(2,4,4)
->>>>>>> 700902759ffa7926a3dccde8f8f0e5c380c3a04d
 func = []
 for line in open( "test_data.csv" ):
 
@@ -141,14 +136,10 @@ for line in open( "test_data.csv" ):
 if __name__ == "__main__":
   f.update( func[0][0], func[0][1] )
 
-<<<<<<< HEAD
-  for i in range( 100):
-=======
   accuracies = [-1 for i in range( 21 ) ]
 
   for i in range( 10001 ):
   # for i in range( 10001 ):
->>>>>>> 700902759ffa7926a3dccde8f8f0e5c380c3a04d
     for (inps, out) in func:
       f.update( inps, out)
 
