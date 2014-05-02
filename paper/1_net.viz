@@ -1,0 +1,84 @@
+digraph {
+
+  a1 [label=<i<sub>1</sub>>]
+  a2 [label=<i<sub>2</sub>>]
+  a3 [label=<a<sub>1</sub>>]
+  a4 [label=<a<sub>2</sub>>]
+  a5 [label=<a<sub>3</sub>>]
+  a6 [label=<a<sub>4</sub>>]
+  a7 [label=<a<sub>5</sub>>]
+  a8 [label=<o<sub>1</sub>>]
+  a9 [label=<o<sub>2</sub>>]
+  a10 [label=<o<sub>3</sub>>]
+  a11[label=<o<sub>4</sub>>]
+
+
+  a1 -> a3
+  a1 -> a4
+  a1 -> a5
+  a1 -> a6
+  a1 -> a7
+
+
+
+  a2 -> a3
+  a2 -> a4
+  a2 -> a5
+  a2 -> a6
+  a2 -> a7
+
+  a3 -> a8
+  a3 -> a9
+  a3 -> a10
+  a3 -> a11
+
+
+
+  a4 -> a8
+  a4 -> a9
+  a4 -> a10
+  a4 -> a11
+
+
+
+  a5 -> a8
+  a5 -> a9
+  a5 -> a10
+  a5 -> a11
+
+
+  a6 -> a8
+  a6 -> a9
+  a6 -> a10
+  a6 -> a11
+
+
+  a7 -> a8
+  a7 -> a9
+  a7 -> a10
+  a7 -> a11
+
+ edge[constraint=false]; 
+  edge[style="dashed"];
+
+  b1 [label="bias"]
+  b2 [label="bias"]
+
+  b1 -> a3
+  b1 -> a4
+  b1 -> a5
+  b1 -> a6
+  b1 -> a7
+
+
+
+  b2 -> a8
+  b2 -> a9
+  b2 -> a10
+  b2 -> a11
+
+
+
+
+
+}

@@ -1,0 +1,56 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+
+
+\title{Introduction to Intelligent Systems: Project 2}
+\author{Lee Avital and Mayur Sanghavi}
+
+
+\begin{document}
+
+
+\maketitle
+
+
+\section{Classifier Designs}
+
+\subsection{Random Forest Classifier}
+
+We used a random forest classifier that generated a variable number of decision trees that all went down three
+nodes deep. Since the input variables were continuous, we needed to generate random splits to
+emulate the decision boundaries necessary for using decision trees.
+
+\subsection{Multi-Layer Perceptron Classifier}
+
+We also used a 2-5-4 multi-layer perceptron (illustrated in full below) feeding a bias layer into
+both the hidden and output nodes.
+
+\includegraphics[width=300px]{1_net.png}
+
+\subsection{Hypothesis}
+
+
+When running both classifiers for a short time (i.e. 100 trees for the random forest and 100
+epochs for the multi-layer perceptron) we expected the multi-layer perceptron to outperform the random forest.
+This was because the multi-layer perceptron, by its nature, worked on continuous inputs while
+the random forest needed to extrapolate discrete decision classes.
+
+We expected the random forest to outperform the multi-layer perceptron after running a long
+time (i.e. 10,000 trees or 10,000 epochs.) This was because the random forest was less likely to
+overfit than the multi-layer perceptron.
+
+
+
+\section{Data Sets}
+
+
+\section{Results}
+
+
+
+\section{Discussion}
+
+
+
+\end{document}
