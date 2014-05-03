@@ -48,20 +48,50 @@ overfit than the multi-layer perceptron.
 
 Below are the sum of squared errors for the random forest solution and the multi-layer perceptron
 solution. The random forest solution starts droping off at around 20\% while the
-multi-layer perceptron drops off around 10\%.
+multi-layer perceptron drops off around 10\%. \\
 
 
-\includegraphics[width=200px]{dt_sse_training.png}
+{\center Random Forest} \\
+\includegraphics[width=200px]{dt_sse_training.png} \\
+
+
+{\center Multi-layer Perceptron} \\
 \includegraphics[width=200px]{mlp_sse_training.png}
 
 
 \section{Results}
 
 
-Below are decision matrices
+\subsection{Decision Tree Results}
+\begin{tabular}{l l}
+  Number of Trees &   Recognition Rate\\
+  1               &   65\% \\
+  10              &   95\% \\
+  100             &   95\% \\
+\end{tabular}
+
+\subsection{Multi-layer Perceptron Results}
+
+
+\begin{tabular} {l l }
+  Number of Epochs & Recognition Rate \\
+  1                & 30\% \\
+  10               & 25\% \\
+  100              & 55\% \\
+  1000             & 100\% \\
+\end{tabular}
+
 
 
 \section{Discussion}
+Our predections ended up being correct. The decision tree based random forest ended up
+topping out at 95\% accuracy while the multi-layer perceptron had 100\% accuracy.
+
+Interestingly enough, the random forest with 10 subtrees performed just as well as the one with 100
+subtrees. This suggests that the 100-tree random forest might be overfit, and the 10-tree is good enough.
+This seems even more true when you look at the error for the test data (section 2) and notice how the
+error flattens well before 100 trees.
+
 
 
 
